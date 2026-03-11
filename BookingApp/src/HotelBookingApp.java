@@ -2,29 +2,52 @@
  *
  * MAIN CLASS HotelBookingApp
  *
- * Use Case 1: Application Entry & Welcome Message
+ * Use Case 2: Basic Room Types & Static Availability
  *
  * Description:
- * This class represents the entry point of the
- * Hotel Booking Management System.
+ * This class demonstrates room initialization
+ * using domain models before introducing
+ * centralized inventory management.
+ *
+ * Availability is represented using
+ * simple variables to highlight limitations.
  *
  * @author Oviya-Babu
- * @version 1.0
+ * @version 2.1
  */
 
 public class HotelBookingApp {
 
     /**
      * Application entry point.
-     * This method is executed first by the JVM.
      *
      * @param args Command-line arguments
      */
 
     public static void main(String[] args) {
 
-        System.out.println("Welcome to the Hotel Booking Management System");
-        System.out.println("System initialized successfully.");
+        System.out.println("Hotel Room Initialization\n");
 
+        Room single = new SingleRoom();
+        Room doubleRoom = new DoubleRoom();
+        Room suite = new SuiteRoom();
+
+        int singleAvailable = 5;
+        int doubleAvailable = 3;
+        int suiteAvailable = 2;
+
+        System.out.println("Single Room:");
+        single.displayRoomDetails();
+        System.out.println("Available: " + singleAvailable);
+        System.out.println();
+
+        System.out.println("Double Room:");
+        doubleRoom.displayRoomDetails();
+        System.out.println("Available: " + doubleAvailable);
+        System.out.println();
+
+        System.out.println("Suite Room:");
+        suite.displayRoomDetails();
+        System.out.println("Available: " + suiteAvailable);
     }
 }
